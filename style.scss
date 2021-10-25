@@ -1,0 +1,70 @@
+:root {
+  --typewriterSpeed: 24;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: white;
+}
+
+h1 {
+  position: relative;
+  width: fit-content;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 2px;
+  font-size: 50px;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+h1::before {
+  background: white;
+  background-size: cover;
+  animation: typewriter 5s steps(24) 1 forwards;
+}
+
+h1::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter 5s steps(24) 1 forwards, blink 500ms steps(24) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+p {
+  font-size: 24px;
+  font-family: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeUp 2s ease 5.5s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
